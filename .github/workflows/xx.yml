@@ -1,0 +1,15 @@
+# When
+on: push    
+
+# What
+jobs:
+  job1:
+    steps:
+    - run: pwd
+    - run: ls -l 
+    - run: date
+  job2:
+    steps:
+    - run: node --version
+    - run: python3 --version
+
