@@ -1,0 +1,29 @@
+name: Testing NPM Build
+on: push
+
+permissions:
+  contents: write
+
+jobs:
+  npm-build:
+    name: Starting job called npm-build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checking out repo
+        uses: actions/checkout@v4
+
+      - name: Running node version
+        run: node --version
+
+      - name: Installting npm and Running npm run build 
+        run: |
+          npm install
+          npm run build
+
+      - name: Pushing to GH Pages
+        uses: James/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: build 
+
