@@ -1,10 +1,18 @@
+name: Testing NPM Build
 on: push
 
 jobs:
   npm-build:
+    name: Starting job called npm-build
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - run: npm install
-      - run: npm run build
+      - name: Checking out repo
+        uses: actions/checkout@v4
+
+      - name: Running node version
+        run: node --version
+
+      - name: Running npm run build
+        run: npm run build
 
