@@ -4,11 +4,13 @@ on: push
 # What
 jobs:
   job1:
+    runs-on: ubuntu-latest
     steps:
     - run: pwd
     - run: ls -l 
     - run: date
   job2:
+    runs-on: windows-latest
     steps:
     - run: node --version
     - run: python3 --version
